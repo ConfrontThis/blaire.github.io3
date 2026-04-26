@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLAIRE</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #050505;
+      color: #aaa;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 15px;
+      background: rgba(0,0,0,0.7);
+    }
+
+    nav a img {
+      width: 22px;
+      opacity: 0.5;
+      transition: 0.3s ease;
+    }
+
+    nav a img:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      width: 160px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 12px rgba(255,255,255,0.15));
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: #888;
+      letter-spacing: 6px;
+    }
+
+    section {
+      max-width: 600px;
+      margin: 120px auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 0.85rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      opacity: 0.6;
+      border: none;
+      transition: 0.3s;
+    }
+
+    iframe:hover {
+      opacity: 1;
+    }
+
+    .gallery img {
+      width: 100%;
+      margin-top: 20px;
+      opacity: 1;
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      font-size: 0.7rem;
+      color: #222;
+    }
+
+    /* subtle fade-in */
+    .fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 1.2s ease;
+    }
+
+    .fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-logo {
+    width: 60%;
+    max-width: 700px;
+    opacity: 0.85;
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.08));
+    transition: 0.6s ease;
+    }
+
+    .hero-logo:hover {
+     opacity: 1;
+     filter: drop-shadow(0 0 30px rgba(255,255,255,0.2));
+    }
+
+    #about{
+      height: 150px;
+    }
+
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 5; /* adjust for visibility */
+      filter: grayscale(100%) contrast(120%) brightness(60%);
+    }
+
+    .sigil-nav {
+      position: relative;
+      top: 0;
+      width: 100%;
+      padding: 20px 0;
+
+      display: flex;
+      justify-content: center;
+      gap: 150px;
+
+      background: transparent;
+      padding: 0;
+    }
+
+    .sigil-nav img {
+      height: 450px;
+      width: 200px;
+      opacity: 0.6;
+      transition: 0.4s ease;
+      display: block;
+    }
+
+    .sigil-nav img:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    
+</style>
+
+</head>
+
+<body>
+
+  <header>
+  <img src="blaire_white_transparent.png" alt="Blaire logo" class="hero-logo">
+  </header>
+
+  <section id="sigil-nav" class="fade">
+    <nav class="sigil-nav">
+      <a href="aimerch.html"><img src="blaire_star_WHITEb.png" alt="music"></a>
+      <a href="gallery.html"><img src="blaire_star_WHITEb.png" alt="gallery"></a>
+      <a href="index.html"><img src="blaire_star_WHITEb.png" alt="about"></a>
+    </nav>
+  </section>
+
+  <footer>
+    <p>© BLAIRE</p>
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    faders.forEach(el => observer.observe(el));
+  </script>
+  
+</body>
+
+<video autoplay muted loop playsinline class="bg-video">
+  <source src="WEBSITE VIDEO.mp4" type="video/mp4">
+</video>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  <section id="music" class="fade">
+    <h2>SOUND</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/VO0SDMR---U?si=pPZkRB5pfzGqQuh8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </section>
+
+  <section id="gallery" class="gallery fade">
+    <h2>VISIONS</h2>
+    <img src="Screenshot_2026-04-25_at_1.49.24_AM.png">
+  </section>
+  
+  <section id="merch" class="merch fade">
+    <h2>MERCH</h2>
+  </section>
+ 
+  ADD SECTION FOR ARCHIVED FLYERS 
+  -->

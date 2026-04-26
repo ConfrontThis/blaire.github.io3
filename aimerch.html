@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MERCH</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #050505;
+    color: #aaa;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+  }
+
+  header {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #888;
+    letter-spacing: 6px;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  /* MERCH GRID */
+  .merch-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    padding: 40px;
+  }
+
+  .item {
+    text-align: center;
+    width: 220px;
+    transition: transform 0.3s ease;
+  }
+
+  .item img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0.8) contrast(1.2);
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+
+  .item h2 {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 15px;
+    letter-spacing: 2px;
+  }
+
+  .item p {
+    font-size: 0.75rem;
+    color: #555;
+  }
+
+  /* optional button */
+  .buy-btn {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid #333;
+    color: #777;
+    text-decoration: none;
+    font-size: 0.7rem;
+    transition: all 0.2s ease;
+  }
+
+  .buy-btn:hover {
+    background: #111;
+    color: #ccc;
+    border-color: #555;
+  }
+
+  footer {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 0.7rem;
+    color: #222;
+  }
+
+  .bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.15;
+    filter: grayscale(100%) contrast(120%) brightness(60%);
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>MERCH</h1>
+</header>
+
+<section class="merch-section">
+
+  <div class="item">
+    <img src="shirt1.png" alt="Shirt">
+    <h2>SIGIL SHIRT</h2>
+    <p>$30</p>
+    <a href="#" class="buy-btn">VIEW</a>
+  </div>
+
+  <div class="item">
+    <img src="hoodie.png" alt="Hoodie">
+    <h2>VOID HOODIE</h2>
+    <p>$60</p>
+    <a href="#" class="buy-btn">VIEW</a>
+  </div>
+
+  <div class="item">
+    <img src="hat.png" alt="Hat">
+    <h2>STAR CAP</h2>
+    <p>$25</p>
+    <a href="#" class="buy-btn">VIEW</a>
+  </div>
+
+</section>
+
+<footer>
+  <p>© BLAIRE</p>
+</footer>
+
+<video autoplay muted loop playsinline class="bg-video">
+  <source src="WEBSITE VIDEO.mp4" type="video/mp4">
+</video>
+
+</body>
+</html>
